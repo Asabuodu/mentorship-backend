@@ -63,8 +63,10 @@ const app = express();
 // ✅ Setup proper CORS
 const allowedOrigins = [
   'https://mentorship-frontend-git-master-asabuodu-innocents-projects.vercel.app',
+  'https://mentorship-frontend-n6od9y7v1-asabuodu-innocents-projects.vercel.app', // ✅ NEW
   'http://localhost:3000'
 ];
+
 
 app.use(
   cors({
