@@ -64,6 +64,7 @@ const app = express();
 const allowedOrigins = [
   'https://mentorship-frontend-git-master-asabuodu-innocents-projects.vercel.app',
   'https://mentorship-frontend-n6od9y7v1-asabuodu-innocents-projects.vercel.app', // ✅ NEW
+  'https://mentorship-frontend-psi.vercel.app/start',
   'http://localhost:3000'
 ];
 
