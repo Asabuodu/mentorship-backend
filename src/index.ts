@@ -79,15 +79,20 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin) return callback(null, true); // Allow server-to-server or curl
+
+      const isAllowed = allowedOrigins.some((o) => origin.startsWith(o));
+      if (isAllowed) {
         callback(null, true);
       } else {
+        console.error('❌ CORS blocked for origin:', origin);
         callback(new Error('Not allowed by CORS'));
       }
     },
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 
